@@ -1,0 +1,89 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+  }
+  .AppWrapper {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  :root {
+    --primary: #6244c5;
+    --secondary: #ffc448;
+    --light: #fafafb;
+    --dark: #12141d;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+  }
+  
+  .my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+  
+  .py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+/* Container for the X */
+.loader-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide the overflow of the filling animation */
+}
+
+/* Style for the "X" letter itself */
+.x-loader {
+  position: absolute;
+  z-index: 10;
+  color: transparent; /* Hide the text color */
+  background: none;
+  font-size: 5rem; /* Adjust the size of the "X" */
+  font-weight: bold;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Make the "X" shape transparent */
+  border: 4px solid transparent; /* Optional: for clearer outline */
+  position: relative;
+}
+
+/* Filling effect */
+.fill-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4CAF50; /* Green fill */
+  animation: fillX 3s ease-in-out infinite; /* Fill and empty animation */
+  z-index: 5;
+  transform-origin: bottom;
+}
+
+/* Animation to fill and empty the "X" */
+@keyframes fillX {
+  0% {
+    transform: scaleY(0); /* Start empty */
+    opacity: 0.3;
+  }
+  50% {
+    transform: scaleY(1); /* Fully filled */
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0); /* Empty again */
+    opacity: 0.3;
+  }
+}
